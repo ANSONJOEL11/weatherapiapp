@@ -264,8 +264,6 @@ extension ViewController: CLLocationManagerDelegate {
             let latitude = location.coordinate.latitude
             let longitude = location.coordinate.longitude
             print("LatLong: (\(latitude), \(longitude)")
-            let searchOption = "\(latitude),\(longitude)"
-            weatherApidata(search: searchOption)
         }
     }
     
