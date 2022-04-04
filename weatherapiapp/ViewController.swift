@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         location.delegate = self
         
         if CLLocationManager.locationServicesEnabled() {
-            location.delegate = self
+            //location.delegate = self
             location.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             location.startUpdatingLocation()
             
@@ -66,8 +66,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //                    print("fatal")
 //                }
 //            }
-        func searchBarProperty(_ textField: UITextField) -> Bool {
+//        func searchBarProperty(_ textField: UITextField) -> Bool {
+//            textField.endEditing(true)
+//            weatherApidata(search: textField.text)
+//            return true
+//        }
+        
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            //print(textField.text ?? "")
             textField.endEditing(true)
+            textField.resignFirstResponder()
             weatherApidata(search: textField.text)
             return true
         }
@@ -263,7 +271,9 @@ extension ViewController: CLLocationManagerDelegate {
         if let location = locations.last {
             let latitude = location.coordinate.latitude
             let longitude = location.coordinate.longitude
+            //let city = latitude/longitude
             print("LatLong: (\(latitude), \(longitude)")
+            //weatherApidata(search: city)
         }
     }
     
