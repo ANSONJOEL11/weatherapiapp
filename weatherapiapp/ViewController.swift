@@ -149,7 +149,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func urldata(location:String) -> URL? {
         let baseurl = "https://api.weatherapi.com/v1/"
         let endpoint = "current.json"
-        let APIKey = "3c2c33e01ffb47af89d234233220304"
+        let APIKey = ""
         let url = "\(baseurl)\(endpoint)?key=\(APIKey)&q=\(location)"
         return URL(string: url)
     }
